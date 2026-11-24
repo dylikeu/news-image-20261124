@@ -458,10 +458,14 @@ CONTINENTS = [
     # United Kingdom (drawn slightly enlarged so the island reads)
     [(-8, 50), (-4, 49), (-1, 51), (0, 53), (-1, 56), (-2, 59),
      (-5, 59), (-7, 57), (-7, 53), (-8, 50)],
-    # Japan
-    [(130, 31), (131, 33), (133, 34), (135, 34), (137, 35), (139, 36),
-     (140, 38), (141, 40), (141, 44), (144, 44), (143, 42), (141, 39),
-     (139, 36), (136, 33), (132, 33), (130, 31)],
+    # Japan (drawn enlarged so the island chain reads at this scale —
+    # Tokyo must sit on land, not on sea)
+    [(130, 28), (131, 31), (133, 33), (135, 34), (137, 35), (139, 36),
+     (140, 38), (141, 40), (141, 46), (147, 46), (146, 42), (145, 38),
+     (144, 34), (142, 30), (138, 28), (132, 28), (130, 28)],
+    # Korea peninsula (drawn slightly enlarged so Seoul sits on land)
+    [(125.5, 34.5), (126, 37), (126.5, 39.5), (128, 40), (129.5, 39),
+     (129.5, 37), (129, 35), (127.5, 34.5), (125.5, 34.5)],
     # Caribbean islands (drawn slightly enlarged so they read at this
     # scale — so no dot floats on sea)
     [(-87, 24), (-82, 24), (-77, 21), (-73, 20), (-77, 19), (-82, 22),
@@ -605,10 +609,10 @@ def draw_map(img, d, x, y, w, h):
         d.polygon(pts, fill=(168, 196, 168, 255), outline=(110, 140, 110, 255))
     for num, label, lon, lat in MAP_DOTS:
         px, py = proj(lon, lat)
-        d.ellipse([px - 8, py - 8, px + 8, py + 8], fill=RED,
+        d.ellipse([px - 6, py - 6, px + 6, py + 6], fill=RED,
                   outline=(255, 255, 255, 255), width=2)
-        tw = d.textlength(str(num), font=F_BOLD(8))
-        d.text((px - tw / 2, py - 6), str(num), font=F_BOLD(8),
+        tw = d.textlength(str(num), font=F_BOLD(7))
+        d.text((px - tw / 2, py - 5), str(num), font=F_BOLD(7),
                fill=(255, 255, 255, 255))
     # legend, right side of the map box
     lx = x + w - 178
