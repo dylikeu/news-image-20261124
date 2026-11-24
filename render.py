@@ -400,7 +400,7 @@ TIMELINE = [
     ("09:20", "STOXX 600 slips 0.16% as tech rally fades"),
     ("12:12", "Israeli strike kills Hamas security chief in Gaza"),
     ("14:30", "Iran’s rial plunges to 2.82m per dollar"),
-    ("18:45", "Champions League night: Bodø/Glimt–LASK kick off"),
+    ("17:45", "Champions League night: Bodø/Glimt–LASK kick off"),
 ]
 
 # lon/lat polygons, drawn by hand (simplified world outline)
